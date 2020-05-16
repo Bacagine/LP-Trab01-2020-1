@@ -1,4 +1,4 @@
-/* Git Hub: https://github.com/Bacagine/Modelos
+/* Git Hub: https://github.com/Bacagine/covid19
  * 
  * buffer.h: Biblioteca com o prototipo da função clear_buffer
  * 

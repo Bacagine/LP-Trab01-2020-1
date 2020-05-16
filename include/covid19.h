@@ -56,4 +56,3 @@ maior sequência crescente de contágios deseja-se obter. */
 int maior_sequencia_crescente(int, int [][*], int);
 
 #endif
-

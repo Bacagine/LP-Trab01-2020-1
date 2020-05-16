@@ -1,4 +1,6 @@
 /************************************************************************
+ * Git Hub: https://github.com/Bacagine/covid19                         *
+ *                                                                      *
  * covid19.h: Arquivo com o desenvolvimento do prototipos das funções   *
  * encontradas na biblioteca covid19.h                                  *
  *                                                                      *
@@ -9,7 +11,7 @@
  ************************************************************************/
 
 #include <stdio.h>
-#include "../include/covid19.h"
+#include "covid19.h"
 
 void le_paises(int , char [][TAM_MAX_NOME + 1]){
     
@@ -30,4 +32,3 @@ void dia_maior_contagio_pais(int, int [][*], int *, int *){
 int maior_sequencia_crescente(int, int [][*], int){
     
 }
-

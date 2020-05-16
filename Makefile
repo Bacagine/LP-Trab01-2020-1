@@ -1,39 +1,55 @@
 # Git Hub: https://github.com/Bacagine/covid19
 # 
 # Makefile criado por Gustavo Bacagine <gustavo.bacagine@protonmail.com>
-#
-# Data de ciração: 14/05/2020
-# Data da última modificação: 15/05/2020
 # 
+# covid19 é uma aplicação que ...
+# 
+# Data de ciração: 14/05/2020
+# Data da última modificação: 16/05/2020
 
-TARGET = covid19
-SRCDIR = ./src
-OBJDIR = ./obj
-INCDIR = ./include
-BINDIR = ./bin
-SRC = $(wildcard $(SRCDIR/*.c))
-OBJ = $(wildcard $(OBJDIR/*.o))
-INC = $(wildcard $(INCDIR/*.h))
-CC = gcc
-CFLAGS = -W -lm -ansi
+TARGET  = covid19
+SRCDIR  = ./src
+INCDIR  = ./include
+OBJDIR  = ./obj
+BINDIR  = ./bin
+SRC     = $(wildcard $(SRCDIR)/*.c)
+INC     = -I $(INCDIR)
+OBJ     = $(addprefix $(OBJDIR)/,main.o covid19.o clear_buffer.o)
+BIN     = $(BINDIR)/$(TARGET)
+RM      = rm -rf
+CC      = gcc
+#CFLAGS  = -W -Wall -lm -g
 
-.PHONY: clean realclean install uninstall
+all: $(OBJDIR) $(BINDIR) $(BIN)
 
-$(TARGET): $(OBJ)
-	$(CC) -o $(TARGET) $(OBJ)
-main.o: $(SRCDIR)/main.c $(INCDIR)/covid19.h
-	$(CC) -c main.c
-covid19.o: $(SRCDIR)/covid19.c $(INCDIR)/covid19.h
-	$(CC) -c covid19.c
+$(BIN): $(OBJ) # $@ = $(BIN) & $< = $(OBJ)
+	$(CC) -o $@ $< $(CFLAGS)
+$(OBJDIR)/main.o: $(SRCDIR)/main.c $(INCDIR)/covid19.h
+	$(CC) -c $< -I $(INCDIR) -o $@ $(CFLAGS)
+$(OBJDIR)/covid19.o: $(SRCDIR)/covid19.c $(INCDIR)/covid19.h
+	$(CC) -c $< -I $(INCDIR) -o $@ $(CFLAGS)
+$(OBJDIR)/clear_buffer.o: $(SRCDIR)/clear_buffer.c $(INCDIR)/clear_buffer.h
+	$(CC) -c $< -I $(INCDIR) -o $@ $(CFLAGS)
+$(OBJDIR):
+	mkdir $(OBJDIR)
+$(BINDIR):
+	mkdir $(BINDIR)
+run: all
+	@$(BIN)
 clean:
-	rm -f $(OBJ)
-realclean: clean
-	rm -f $(TARGET)
+	$(RM) $(OBJ)
+mrproper: clean
+	$(RM) $(OBJDIR)
+	$(RM) $(BINDIR)
 install:
+	cp -rv $(BIN) /usr/bin/
 	mkdir -p /usr/share/$(TARGET)
-	cp -r $(BINDIR)/$(TARGET) /usr/share/$(TARGET)
-	cp -r $(TARGET).desktop /usr/share/applications/
+	cp -rv $(BINDIR)/$(TARGET) /usr/share/$(TARGET)
+	cp -rv $(TARGET).desktop /usr/share/applications/
 	desktop-file-install /usr/share/applications/$(TARGET).desktop
 uninstall: install
-	rm -rf /usr/share/$(TARGET)
-	rm -rf /usr/share/applications/$(TARGET).desktop
+	$(RM) /usr/bin/$(TARGET)
+	$(RM) /usr/share/$(TARGET)
+	$(RM) /usr/share/applications/$(TARGET).desktop
+
+.PHONY: all run clean mrproper install uninstall

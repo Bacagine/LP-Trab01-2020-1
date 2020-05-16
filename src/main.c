@@ -1,16 +1,24 @@
-/*********
- * main.c: Arquivo principal do programa Trab01  *
- *       *
+/************************************************************************
+ * Git Hub: https://github.com/Bacagine/covid19                         *
+ *                                                                      *
+ * main.c: Arquivo principal do programa covid19                        *
+ *                                                                      *
  * Desenvolvido por: Gustavo Bacagine <gustavo.bacagine@protonmail.com> *
- *          *
- * Data: 14/05/2020 *
- * Data da última modificação: 14/05/2020           *
- ************/
+ *                                                                      *
+ * Data: 14/05/2020                                                     *
+ * Data da última modificação: 14/05/2020                               *
+ ************************************************************************/
 
 #include <stdio.h>
-#include "../include/covid19.h"
+#include "covid19.h"
 
 int main(void){
+    /* usado para testar o Makefile
+    char foo[5] = "Olá";
+    char bar[9] = "Mundo!!!";
+    
+    printf("%s %s\n", foo, bar);
+    */
     int p, d, count;
 
     printf("Numero total de congagios por pais\n");

@@ -1,5 +1,5 @@
 /******************************************************************************
- * Git Hub: https://github.com/Bacagine/  *
+ * Git Hub: https://github.com/Bacagine/covid19                               *
  *                                                                            *
  * Aqui deverá vir uma breve explicação sobre a aplicação                     *
  *                                                                            *
@@ -18,7 +18,7 @@
  ******************************************************************************/
 
 #include <stdio.h>
-#include "../include/clear_buffer.h"
+#include "clear_buffer.h"
 
 void clear_buffer(void){    
     char c;
