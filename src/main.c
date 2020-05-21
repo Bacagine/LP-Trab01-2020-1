@@ -21,40 +21,20 @@
 #include "../include/covid19.h"
 
 int main(void){
-    /* usado para testar o Makefile
-    char foo[5] = "Olá";
-    char bar[9] = "Mundo!!!";
-    
-    system("clear");
-    
-    printf("%s %s\n", foo, bar);
-    
-    getchar();
-    */
-    
-    int p, d, count;
+    int p, d, count, i, j;
     
     scanf("%d", &p);
     
     char name_country[p][51];
     
-    for(count = 0; count < p; count++){
-        scanf("%s", name_country[count]);
-        clear_buffer();
-    }
-    
-    scanf("%d", &d);
-    clear_buffer();
+    le_paises(p, num_contagions[p][51]);
+/*    scanf("%d", &d);
+    clear_buffer();*/
     
     //printf("O valor de p é = %d\nE o valor de d é = %d\n", p, d);
-    count = 0;
     
     int num_contagions[p][d];
-    
-    for(; count < d; count++){
-        scanf("%d", &num_contagions[p][count]);
-    }
-    
+    le_contagios(p, d, );
     
     /*printf("Numero total de congagios por pais\n");
     for(count = 0; count < p; count++){
@@ -77,3 +57,13 @@ int main(void){
     return 0;
 }
 
+// COMENTARIOS INUTEIS
+    /* usado para testar o Makefile
+    char foo[5] = "Olá";
+    char bar[9] = "Mundo!!!";
+    
+    system("clear");
+    
+    printf("%s %s\n", foo, bar);
+    
+    getchar();*/
