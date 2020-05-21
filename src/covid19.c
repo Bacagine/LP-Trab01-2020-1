@@ -1,6 +1,10 @@
 /************************************************************************************
  * Git Hub: https://github.com/Bacagine/LP-Trab01-2020-01                           *
  *                                                                                  *
+ * covid19 é uma aplicação que recebe e processa informações a respeito do numero   *
+ * de contagios por Covid-19 em um conjunto de paises num determinado periodo de    *
+ * tempo.                                                                           *
+ *                                                                                  *
  * covid19.h: Arquivo com o desenvolvimento do prototipos das funções               *
  * encontradas na biblioteca covid19.h                                              *
  *                                                                                  *

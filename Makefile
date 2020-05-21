@@ -1,6 +1,8 @@
 # Makefile criado por Gustavo Bacagine <gustavo.bacagine@protonmail.com>
 # 
-# covid19 é uma aplicação que ...
+# covid19 é uma aplicação que recebe e processa informações a respeito do 
+# numero de contagios por Covid-19 em um conjunto de paises num
+# determinado periodo de tempo
 # 
 # Data de ciração: 14/05/2020
 # Data da última modificação: 16/05/2020
