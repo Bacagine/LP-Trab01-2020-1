@@ -15,7 +15,9 @@ da FATEC para aula de Programação do professor
 
 Ciro Cirne Trindade [(site do Professor Ciro)](https://sites.google.com/site/ciroct/home)
 
-covid19 é uma aplicação que recebe e processa informações a respeito do numero de contagios por Covid-19 em um conjunto de paises num determinado periodo de tempo.
+covid19 é uma aplicação que recebe e processa informações a respeito do numero de 
+
+contagios por Covid-19 em um conjunto de paises num determinado periodo de tempo.
 
 # Entrada
 ![git-hub large](entrada.png)
