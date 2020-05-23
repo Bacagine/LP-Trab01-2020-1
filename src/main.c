@@ -27,16 +27,21 @@ int main(void){
     
     char name_country[p][51];
     
-    le_paises(p, num_contagions[p][51]);
-/*    scanf("%d", &d);
-    clear_buffer();*/
+    le_paises(p, name_country);
     
-    //printf("O valor de p é = %d\nE o valor de d é = %d\n", p, d);
+    scanf("%d", &d);
     
-    int num_contagions[p][d];
-    le_contagios(p, d, );
+    int num_contagions[d][];
     
-    /*printf("Numero total de congagios por pais\n");
+    le_contagios(p, d, num_contagions);
+    
+    printf("O valor de p é = %d\nE o valor de d é = %p\n", p, d);
+    for(count = 0; count < p; count++){
+        printf("%s\n", name_country[count]);
+    }
+    
+    /*
+    printf("Numero total de congagios por pais\n");
     for(count = 0; count < p; count++){
         printf("%s: %d\n", name_country[count]);
     }
@@ -57,7 +62,7 @@ int main(void){
     return 0;
 }
 
-// COMENTARIOS INUTEIS
+// COMENTARIOS INÚTEIS
     /* usado para testar o Makefile
     char foo[5] = "Olá";
     char bar[9] = "Mundo!!!";

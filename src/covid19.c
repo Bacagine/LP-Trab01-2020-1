@@ -23,7 +23,7 @@
 void 
 le_paises(int num_countrys, 
           char name_country[][TAM_MAX_NOME + 1]){
-    for(int count = 0; count < p; count++){
+    for(int count = 0; count < num_countrys; count++){
         scanf("%s", name_country[count]);
         clear_buffer();
     }
@@ -33,9 +33,9 @@ void
 le_contagios(int num_countrys, 
              int num_days, 
              int mat_contagions[][*]){
-    for(i = 0; i < p; i++){
-        for(j = 0; j < d; j++){
-            scanf("%d", &num_contagions[p][count]);
+    for(int i = 0; i < num_countrys; i++){
+        for(int j = 0; j < num_days; j++){
+            scanf("%d", &num_contagions[count]);
         }
     }
 }
