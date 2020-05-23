@@ -35,7 +35,7 @@ int main(void){
     
     le_contagios(p, d, num_contagions);
     
-    printf("O valor de p é = %d\nE o valor de d é = %p\n", p, d);
+    printf("O valor de p é = %d\nE o valor de d é = %d\n", p, d);
     for(count = 0; count < p; count++){
         printf("%s\n", name_country[count]);
     }
