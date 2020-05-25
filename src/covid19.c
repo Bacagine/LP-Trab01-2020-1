@@ -13,37 +13,43 @@
  *                   Caio Elias Emerick Regino <caioregino.147@gmail.com>           *
  *                                                                                  *                                                
  * Data de início: 14/05/2020                                                       *
- * Data da última modificação: 18/05/2020                                           *
+ * Data da última modificação: 24/05/2020                                           *
  ************************************************************************************/
 
 #include <stdio.h>
+#include <locale.h>
 #include "../include/clear_buffer.h"
 #include "../include/covid19.h"
 
 void 
 le_paises(int num_countrys, 
           char name_country[][TAM_MAX_NOME + 1]){
+    setlocale(LC_ALL, "");
+    
     for(int count = 0; count < num_countrys; count++){
         scanf("%s", name_country[count]);
         clear_buffer();
     }
 }
-
+/*
 void 
 le_contagios(int num_countrys, 
              int num_days, 
              int mat_contagions[][*]){
+    setlocale(LC_ALL, "");
+    
     for(int i = 0; i < num_countrys; i++){
         for(int j = 0; j < num_days; j++){
-            scanf("%d", &num_contagions[count]);
+            scanf("%d", &mat_contagions[][*]);
         }
     }
-}
+}*/
 /*
 int 
 total_contagios_pais(int num_days, 
                      int mat_total_contagions[][*], 
                      int index_contagion){
+    setlocale(LC_ALL, "");
     
     
     return;
@@ -55,6 +61,7 @@ dia_maior_contagio_pais(int num_days,
                         int index_contagion, 
                         int *contagion_day, 
                         int *max_contagion_number){
+    setlocale(LC_ALL, "");
     
 }
 
@@ -64,6 +71,7 @@ dia_maior_contagio(int num_countrys,
                    int mat_contagions[][*], 
                    int *contagion_day, 
                    int *max_contagion_number){
+    setlocale(LC_ALL, "");
     
 }
 
@@ -71,6 +79,7 @@ int
 maior_sequencia_crescente(int num_days, 
                           int mat_contagions[][*], 
                           int index_contagion){
+    setlocale(LC_ALL, "");
     
     
     return;
