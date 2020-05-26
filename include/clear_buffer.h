@@ -1,11 +1,25 @@
 /* Git Hub: https://github.com/Bacagine/covid19
  * 
+ * Copyright (C) 2020
+ * 
  * buffer.h: Biblioteca com o prototipo da função clear_buffer
  * 
  * Biblioteca criada por Gustavo Bacagine <gustavo.bacagine@protonmail.com>
  * 
- * Data: 30/11/2019
+ * Este programa é software livre; você pode redistribuí-lo e/ou modificá-lo
+ * sob os termos da GNU General Public License conforme publicada pela Free
+ * Software Foundation; quer a versão 2 da licença, ou (conforme você escolha)
+ * qualquer versão posterior.
  * 
+ * Este programa é distribuído com a esperança de que seja útil, mas SEM
+ * QUALQUER GARANTIA; mesmo sem a garantia implícita de MERCANTIBILIDADE OU
+ * ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Para mais detalhes, veja a
+ * GNU General Public License.
+ * 
+ * Você deve ter recebido uma cópia da GNU General Public License juntamente
+ * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>
+ * 
+ * Data: 30/11/2019
  */
 
 #ifndef _CLEAR_BUFFER_H

@@ -1,3 +1,35 @@
+/**********************************************************************************
+ * Git Hub: https://github.com/Bacagine/LP-Trab01-2020-01                         *
+ *                                                                                *
+ * Copyright (C) 2020                                                             *
+ *                                                                                *
+ * stdout.c: Arquivo com o desenvolvimento das funções da biblioteca stdout.h     *
+ *                                                                                *
+ * covid19 é uma aplicação que recebe e processa informações a respeito do numero *
+ * de contagios por Covid-19 em um conjunto de paises num determinado periodo de  *
+ * tempo.                                                                         *
+ *                                                                                *
+ * Desenvolvidores: Gustavo Bacagine          <gustavo.bacagine@protonmail.com>   *
+ *                  Lucas Pereira de Matos    <lucas.pereira.matos.000@gmail.com> *
+ *                  Caio Elias Emerick Regino <caioregino.147@gmail.com>          *
+ *                                                                                *
+ * Este programa é software livre; você pode redistribuí-lo e/ou modificá-lo      *
+ * sob os termos da GNU General Public License conforme publicada pela Free       *
+ * Software Foundation; quer a versão 2 da licença, ou (conforme você escolha)    *
+ * qualquer versão posterior.                                                     *
+ *                                                                                *
+ * Este programa é distribuído com a esperança de que seja útil, mas SEM          *
+ * QUALQUER GARANTIA; mesmo sem a garantia implícita de MERCANTIBILIDADE OU       *
+ * ADEQUAÇÃO A UM DETERMINADO PROPÓSITO. Para mais detalhes, veja a               *
+ * GNU General Public License.                                                    *
+ *                                                                                *
+ * Você deve ter recebido uma cópia da GNU General Public License juntamente      *
+ * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>        *
+ *                                                                                *
+ * Data:                                                                          *
+ * Data da última modificação: 26/05/2020                                         *
+ **********************************************************************************/
+
 #include <stdio.h>
 #include "../include/stdout.h"
 #include "../include/covid19.h"

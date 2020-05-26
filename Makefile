@@ -73,7 +73,8 @@ install:
 	$(MK) /usr/share/$(TARGET)/icons/
 	$(CP) $(BINDIR)/$(TARGET) /usr/share/$(TARGET)
 	$(CP) $(IMGDIR) /usr/share/$(TARGET)/
-#	$(LINK) /usr/share/$(TARGET)/icons/$(TARGET).png /usr/share/icons/hicolor/128x128/apps/$(TARGET).png
+#	$(CP) $(IMGDIR) /usr/share/pixmaps/
+#	$(LINK) /usr/share/pixmaps/$(TARGET).png /usr/share/icons/hicolor/128x128/apps/$(TARGET).png
 	$(CP) $(TARGET).desktop /usr/share/applications/
 	$(DESKTOP) /usr/share/applications/$(TARGET).desktop
 
@@ -81,8 +82,8 @@ install:
 uninstall:
 	$(RM) /usr/bin/$(TARGET)
 	$(RM) /usr/share/$(TARGET)
-	$(RM) /usr/share/icons/hicolor/128x128/apps/$(TARGET).png
+#	$(RM) /usr/share/pixmaps/$(TARGET).png
+#	$(RM) /usr/share/icons/hicolor/128x128/apps/$(TARGET).png
 	$(RM) /usr/share/applications/$(TARGET).desktop
 
-# 
 .PHONY: all run clean mrproper install uninstall
