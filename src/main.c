@@ -40,8 +40,8 @@ int main(int argc, char **argv){
     if(argc == 1){ // Verifica se o usuário não digitou parametros
         setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
         int p, d; // Quantidade de Países, Quantidade de Dias
-        int count, *num_contagions = NULL;
-        int i, j; // Linha, Coluna
+        //int count;
+        //int i, j; // Linha, Coluna
         
         scanf("%d", &p); // Lê a quanditade de países
               
@@ -58,18 +58,22 @@ int main(int argc, char **argv){
          * países devem ser armazenados.*/
         char name_country[p][51];
         
+        clear_buffer();
+        
+        //while(getchar() != '\n');
+        
         le_paises(p, name_country); // Até aqui tudo OK =)
         
-        //scanf("%d", &d);
-
-        //int mat_contagions[d][*num_contagions]; // Ainda não sei o que fazer aqui
+        scanf("%d", &d);
         
-        //le_contagios(p, d, mat_contagions);
+        int mat_contagions[p][d]; // Ainda não sei o que fazer aqui
+        
+        le_contagios(p, d, mat_contagions);
         
         /* Mostra as mensagens de saída do programa
          * Para mais informações veja a biblioteca
          * stdout.h */
-        output(p, d = 0, name_country); 
+        output(p, d, name_country, mat_contagions);
     }
     else if(argc == 2){ // Verifica se o usuário digitou argumentos
         if((!strcmp(argv[1], "-v")) || (!strcmp(argv[1], "--version"))){

@@ -34,15 +34,26 @@
 #include "../include/stdout.h"
 #include "../include/covid19.h"
 
-void output(int p, int d, char name_country[][TAM_MAX_NOME + 1]){
+void output(int p, int d, char name_country[][TAM_MAX_NOME + 1], int mat_contagions[p][d]){
     setlocale(LC_ALL, "");
     
-    int count;
+    /* Usado para testar se as 
+     * váriaveis estão sendo 
+     * recebidas corretamente */
+    
+    int count, i, j;
     
     printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d);
-    for(count = 0; count <= p; count++){
+    for(count = 0; count < p; count++){
         printf("%s", name_country[count]);
         //puts(name_country[count]);
+    }
+    printf("\nOs contagios por cada país são:\n");
+    for(i = 0; i < p; i++){
+        for(j = 0; j < d; j++){
+            printf("%d ", mat_contagions[i][j]);
+        }
+        printf("\n");
     }
     /*    
     printf("Numero total de congagios por pais\n");
