@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "../include/stdout.h"
-
+/*
 void output(void){
     setlocale(LC_ALL, "");
     
@@ -24,3 +24,4 @@ void output(void){
         printf("%s: %d\n", );
     }
 }
+*/

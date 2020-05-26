@@ -14,7 +14,8 @@
 #include <string.h> // Usado para a manipulação de strings
 
 #define TUX "../.tux.txt" // It is a Easter Egg (this is top secret =) )
-#define VERSION "covid19 20.05.24 (amd64)" // Versão da aplicação
+#define TUX_LINUX "/usr/share/covid19/tux.txt"
+#define VERSION "covid19 20.05.25 (amd64)" // Versão da aplicação
 #define HELP "Usage: covid19 [option]\n\
 \ncovid19 é uma aplicação que recebe e processa informações a respeito do número\n\
 de contagios por Covid-19 em um conjunto de países num determinado período de\n\

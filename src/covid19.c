@@ -17,7 +17,9 @@
  ************************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
 #include <locale.h>
+#include <stdio_ext.h>
 #include "../include/clear_buffer.h"
 #include "../include/covid19.h"
 
@@ -26,9 +28,11 @@ le_paises(int num_countrys,
           char name_country[][TAM_MAX_NOME + 1]){
     setlocale(LC_ALL, "");
     
-    for(int count = 0; count < num_countrys; count++){
-        scanf("%s", name_country[count]);
-        clear_buffer();
+    for(int count = 0; count <= num_countrys; count++){
+        //fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
+        gets(name_country[count]);
+        //clear_buffer();
+        setbuf(stdin, NULL);
     }
 }
 /*

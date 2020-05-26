@@ -29,7 +29,7 @@ int main(int argc, char **argv){
         int i, j; // Linha, Coluna
         
         scanf("%d", &p); // Lê a quanditade de países
-        
+              
         /* Caso o usuário digite um número menor ou
          * igual a zero é pedido para que digite outro
          * valor para p */
@@ -45,16 +45,17 @@ int main(int argc, char **argv){
         
         le_paises(p, name_country); // Até aqui tudo OK =)
         
-        scanf("%d", &d);
+        //scanf("%d", &d);
 
-        int mat_contagions[d][*num_contagions]; // Ainda não sei o que fazer aqui
+        //int mat_contagions[d][*num_contagions]; // Ainda não sei o que fazer aqui
         
         //le_contagios(p, d, mat_contagions);
         
-        printf("O valor de p é = %d\nE o valor de d é = %d\n", p, d);
-        for(count = 0; count < p; count++){
+        printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d = 0);
+        for(count = 0; count <= p; count++){
             printf("%s\n", name_country[count]);
         }
+        getchar();
         /* Mostra as mensagens de saída do programa
          * Para mais informações veja a biblioteca
          * stdout.h */
@@ -76,6 +77,15 @@ int main(int argc, char **argv){
                     fputc(c, stdout); // Mostra o conteudo do arquivo .tux.txt no terminal
                 }
             fclose(tux); // Fecha o arquivo ../.tux.txt
+            }
+            else if((tux = fopen(TUX_LINUX, "r")) != NULL){
+                while((c = fgetc(tux) != EOF)){
+                    fputc(c, stdout);
+                }
+            fclose(tux);
+            }
+            else{
+                fprintf(stderr, "Erro ao abrir o arquivo tux.txt");
             }
         }
     }
