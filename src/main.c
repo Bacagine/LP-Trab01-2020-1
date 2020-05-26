@@ -12,7 +12,7 @@
  *                   Caio Elias Emerick Regino <caioregino.147@gmail.com>           *
  *                                                                                  *
  * Data: 14/05/2020                                                                 *
- * Data da última modificação: 24/05/2020                                           *
+ * Data da última modificação: 25/05/2020                                           *
  ************************************************************************************/
 
 #include <stdio.h>
@@ -51,15 +51,10 @@ int main(int argc, char **argv){
         
         //le_contagios(p, d, mat_contagions);
         
-        printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d = 0);
-        for(count = 0; count <= p; count++){
-            printf("%s\n", name_country[count]);
-        }
-        getchar();
         /* Mostra as mensagens de saída do programa
          * Para mais informações veja a biblioteca
          * stdout.h */
-        //output(); 
+        output(p, d = 0, name_country); 
     }
     else if(argc == 2){ // Verifica se o usuário digitou argumentos
         if((!strcmp(argv[1], "-v")) || (!strcmp(argv[1], "--version"))){

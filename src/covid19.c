@@ -13,7 +13,7 @@
  *                   Caio Elias Emerick Regino <caioregino.147@gmail.com>           *
  *                                                                                  *                                                
  * Data de início: 14/05/2020                                                       *
- * Data da última modificação: 24/05/2020                                           *
+ * Data da última modificação: 25/05/2020                                           *
  ************************************************************************************/
 
 #include <stdio.h>
@@ -29,8 +29,8 @@ le_paises(int num_countrys,
     setlocale(LC_ALL, "");
     
     for(int count = 0; count <= num_countrys; count++){
-        //fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
-        gets(name_country[count]);
+        fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
+        //gets(name_country[count]);
         //clear_buffer();
         setbuf(stdin, NULL);
     }

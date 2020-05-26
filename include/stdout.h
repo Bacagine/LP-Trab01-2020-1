@@ -4,7 +4,7 @@
  * 
  * Biblioteca criada por Gustavo Bacagine <gustavo.bacagine@protonmail.com>
  * 
- * Data: 24/02/2020
+ * Data: 25/02/2020
  */
 
 #ifndef _STDOUT_H
@@ -12,6 +12,7 @@
 
 #include <locale.h>  // Usado para acentuar as palavras
 #include <string.h> // Usado para a manipulação de strings
+#include "covid19.h"
 
 #define TUX "../.tux.txt" // It is a Easter Egg (this is top secret =) )
 #define TUX_LINUX "/usr/share/covid19/tux.txt"
@@ -34,6 +35,6 @@ Arguments:\n\
  * 
  * Para mais informações veja o arquivo
  * README.md */
-void output(void); // Saida do programa
+void output(int p, int d, char name_country[][TAM_MAX_NOME + 1]); // Saida do programa
 
 #endif // _STDOUT_H
