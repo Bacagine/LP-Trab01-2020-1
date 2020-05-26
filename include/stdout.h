@@ -30,8 +30,8 @@
 #include "covid19.h"
 
 #define TUX "../.tux.txt" // It is a Easter Egg (this is top secret =) )
-//#define TUX_LINUX "/usr/share/covid19/tux.txt"
-#define VERSION "covid19 20.05.26v2 (amd64)" // Versão da aplicação
+#define TUX_LINUX "../share/covid19/tux.txt"
+#define VERSION "covid19 20.05.26v3 (amd64)" // Versão da aplicação
 #define HELP "Usage: covid19 [option]\n\
 \ncovid19 é uma aplicação que recebe e processa informações a respeito do número\n\
 de contagios por Covid-19 em um conjunto de países num determinado período de\n\
@@ -50,6 +50,9 @@ Arguments:\n\
  * 
  * Para mais informações veja o arquivo
  * README.md */
-void output(int p, int d, char name_country[][TAM_MAX_NOME + 1], int mat_contagions[][*]); // Saida do programa
+void output(int p, 
+            int d, 
+            char name_country[][TAM_MAX_NOME + 1], 
+            int mat_contagions[][*]); // Saida do programa
 
 #endif // _STDOUT_H

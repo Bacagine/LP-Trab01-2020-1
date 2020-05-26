@@ -40,8 +40,6 @@ int main(int argc, char **argv){
     if(argc == 1){ // Verifica se o usuário não digitou parametros
         setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
         int p, d; // Quantidade de Países, Quantidade de Dias
-        //int count;
-        //int i, j; // Linha, Coluna
         
         scanf("%d", &p); // Lê a quanditade de países
               
@@ -58,22 +56,21 @@ int main(int argc, char **argv){
          * países devem ser armazenados.*/
         char name_country[p][51];
         
-        clear_buffer();
+        clear_buffer(); // Limpa o buffer do terminal
         
-        //while(getchar() != '\n');
-        
-        le_paises(p, name_country); // Até aqui tudo OK =)
+        le_paises(p, name_country);
         
         scanf("%d", &d);
         
-        int mat_contagions[p][d]; // Ainda não sei o que fazer aqui
+        int mat_contagions[p][d];
         
+        // Lê a quantidade de contagios para cada país
         le_contagios(p, d, mat_contagions);
         
         /* Mostra as mensagens de saída do programa
          * Para mais informações veja a biblioteca
          * stdout.h */
-        output(p, d, name_country, mat_contagions);
+        output(p, d, name_country, mat_contagions); // Até aqui tudo OK =)
     }
     else if(argc == 2){ // Verifica se o usuário digitou argumentos
         if((!strcmp(argv[1], "-v")) || (!strcmp(argv[1], "--version"))){
@@ -90,13 +87,31 @@ int main(int argc, char **argv){
                 while((c = fgetc(tux)) != EOF){ // Percorre o arquivo até o final da linha
                     fputc(c, stdout); // Mostra o conteudo do arquivo .tux.txt no terminal
                 }
-            fclose(tux); // Fecha o arquivo ../.tux.txt
-            }/*
-            else if((tux = fopen(TUX_LINUX, "r")) != NULL){
+                fclose(tux); // Fecha o arquivo ../.tux.txt
+            }
+            else if((tux = fopen(TUX, "r")) == NULL){
+                printf(" ______________\n"
+                       "/              \\\n"
+                       "|              |\n"
+                       "| Olá Mundo!!! |\n"
+                       "|              |\n"
+                       "\\              /\n"
+                       " --------------\n"
+                       "   \\\n"
+                       "    \\\n"
+                       "        .--.\n"
+                       "       |o_o |\n"
+                       "       |:_/ |\n"
+                       "      //   \\ \\\n"
+                       "     (|     | )\n"
+                       "    /'\\_   _/`\\\n"
+                       "    \\___)=(___/\n");
+            }
+/*            else if((tux = fopen(TUX_LINUX, "r")) == NULL){ 
                 while((c = fgetc(tux) != EOF)){
                     fputc(c, stdout);
                 }
-            fclose(tux);
+                fclose(tux);
             }*/
             else{
                 fprintf(stderr, "Erro ao abrir o arquivo tux.txt");

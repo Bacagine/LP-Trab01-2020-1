@@ -34,7 +34,10 @@
 #include "../include/stdout.h"
 #include "../include/covid19.h"
 
-void output(int p, int d, char name_country[][TAM_MAX_NOME + 1], int mat_contagions[p][d]){
+void output(int p, 
+            int d, 
+            char name_country[][TAM_MAX_NOME + 1], 
+            int mat_contagions[p][d]){
     setlocale(LC_ALL, "");
     
     /* Usado para testar se as 

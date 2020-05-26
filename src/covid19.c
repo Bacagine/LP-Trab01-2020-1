@@ -44,14 +44,9 @@ le_paises(int num_countrys,
     setlocale(LC_ALL, "");
     
     for(int count = 0; count < num_countrys; count++){
-        //setbuf(stdin, NULL);
-        //__fpurge(stdin);
-        //clear_buffer();
-        //scanf("%s", name_country[count]);
-        //while(getchar() != '\n');
         fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
-        //gets(name_country[count]);
     }
+        clear_buffer();
 }
 void 
 le_contagios(int num_countrys, 
@@ -61,12 +56,9 @@ le_contagios(int num_countrys,
     
     for(int i = 0; i < num_countrys; i++){
         for(int j = 0; j < num_days; j++){
-            //while(getchar() != '\n');
-            //__fpurge(stdin);
-            //setbuf(stdin, NULL);
             scanf("%d", &mat_contagions[i][j]);
-            //clear_buffer();
         }
+            clear_buffer();
     }
 }
 /*
@@ -93,7 +85,7 @@ dia_maior_contagio_pais(int num_days,
 void 
 dia_maior_contagio(int num_countrys, 
                    int num_days, 
-                   int mat_contagions[][*], 
+                   int mat_contagions[num_countrys][num_days], 
                    int *contagion_day, 
                    int *max_contagion_number){
     setlocale(LC_ALL, "");
