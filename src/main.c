@@ -31,46 +31,69 @@
  **********************************************************************************/
 
 #include <stdio.h>
-#include <stdlib.h>                    // Usado para usar comandos do Sistema Operacional
-#include "../include/covid19.h"       // Biblioteca criada pelo Profº Ciro
-#include "../include/clear_buffer.h" // Usado para limpar o buffer do terminal
-#include "../include/stdout.h"      // Biblioteca com a saída do programa
+#include "../include/my_stdio.h"
 
 int main(int argc, char **argv){    
     if(argc == 1){ // Verifica se o usuário não digitou parametros
-        setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
-        int p, d; // Quantidade de Países, Quantidade de Dias
-        
-        scanf("%d", &p); // Lê a quanditade de países
-              
-        /* Caso o usuário digite um número menor ou
-         * igual a zero é pedido para que digite outro
-         * valor para p */
-        while(p <= 0){
-            system("clear");
-            fprintf(stderr, "Erro! A quantidade de países deve ser maior 0\n");
-            fprintf(stderr, "Por favor digite outro valor:\n");
-            scanf("%d", &p);
-        }
-        /* Matriz de caracteres onde os nomes dos
-         * países devem ser armazenados.*/
-        char name_country[p][51];
-        
-        clear_buffer(); // Limpa o buffer do terminal
-        
-        le_paises(p, name_country);
-        
-        scanf("%d", &d);
-        
-        int mat_contagions[p][d];
-        
-        // Lê a quantidade de contagios para cada país
-        le_contagios(p, d, mat_contagions);
-        
-        /* Mostra as mensagens de saída do programa
-         * Para mais informações veja a biblioteca
-         * stdout.h */
-        output(p, d, name_country, mat_contagions); // Até aqui tudo OK =)
+        input();
+//         setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
+//         int p, d; // Quantidade de Países, Quantidade de Dias
+//         
+//         scanf("%d", &p); // Lê a quanditade de países
+//                 
+//        /* Caso o usuário digite um número menor ou
+//         * igual a zero é pedido para que digite outro
+//         * valor para p */
+//         while(p <= 0){
+//             system("clear");
+//             fprintf(stderr, "Erro! A quantidade de países deve ser maior 0\n");
+//             fprintf(stderr, "Por favor digite outro valor:\n");
+//             scanf("%d", &p);
+//         }
+//         /* Matriz de caracteres onde os nomes dos
+//         * países devem ser armazenados.*/
+//         char name_country[p][51];
+//         
+//         clear_buffer(); // Limpa o buffer do terminal
+//         
+//         le_paises(p, name_country);
+//         
+//         scanf("%d", &d);
+//         
+//         int mat_contagions[p][d];
+//         
+//         // Lê a quantidade de contagios para cada país
+//         le_contagios(p, d, mat_contagions);
+//         
+//         clear_buffer();
+//         
+//     //     for(int count = 0; count < p; count++){
+//     //         total_contagios_pais(d, mat_contagions, count);
+//     //     }
+//         int total_contagions_country;
+//         
+//         /* Usado para testar se as 
+//         * váriaveis estão sendo 
+//         * recebidas corretamente */
+//         printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d);
+//         for(int count = 0; count < p; count++){
+//             printf("%s\n", name_country[count]);
+//             //puts(name_country[count]);
+//         }
+//         
+//         printf("\nOs contagios por cada país são:\n");
+//         for(int i = 0; i < p; i++){
+//             for(int j = 0; j < d; j++){
+//                 printf("%d ", mat_contagions[i][j]);
+//             }
+//             printf("\n");
+//         }
+//         
+//         printf("\nNumero total de congagios por pais\n");
+//         for(int count = 0; count < p; count++){
+//             total_contagions_country = total_contagios_pais(d, mat_contagions, count);
+//             printf("%s: %d\n", name_country[count], total_contagions_country);
+//         }
     }
     else if(argc == 2){ // Verifica se o usuário digitou argumentos
         if((!strcmp(argv[1], "-v")) || (!strcmp(argv[1], "--version"))){

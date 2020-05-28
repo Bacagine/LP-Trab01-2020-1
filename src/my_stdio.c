@@ -27,12 +27,51 @@
  * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>        *
  *                                                                                *
  * Data:                                                                          *
- * Data da última modificação: 26/05/2020                                         *
+ * Data da última modificação: 27/05/2020                                         *
  **********************************************************************************/
 
 #include <stdio.h>
-#include "../include/stdout.h"
+#include "../include/my_stdio.h"
 #include "../include/covid19.h"
+#include "../include/clear_buffer.h"
+
+void input(void){
+    setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
+    int p, d; // Quantidade de Países, Quantidade de Dias
+    
+    scanf("%d", &p); // Lê a quanditade de países
+            
+    /* Caso o usuário digite um número menor ou
+     * igual a zero é pedido para que digite outro
+     * valor para p */
+    while(p <= 0){
+        system("clear");
+        fprintf(stderr, "Erro! A quantidade de países deve ser maior 0\n");
+        fprintf(stderr, "Por favor digite outro valor:\n");
+        scanf("%d", &p);
+    }
+    /* Matriz de caracteres onde os nomes dos
+     * países devem ser armazenados.*/
+    char name_country[p][51];
+    
+    clear_buffer(); // Limpa o buffer do terminal
+    
+    le_paises(p, name_country);
+    
+    scanf("%d", &d);
+    
+    int mat_contagions[p][d];
+    
+    // Lê a quantidade de contagios para cada país
+    le_contagios(p, d, mat_contagions);
+    
+    clear_buffer();
+    
+    /* Mostra as mensagens de saída do programa
+     * Para mais informações veja a biblioteca
+     * stdout.h */
+    output(p, d, name_country, mat_contagions); // Até aqui tudo OK =)
+}
 
 void output(int p, 
             int d, 
@@ -40,30 +79,47 @@ void output(int p,
             int mat_contagions[p][d]){
     setlocale(LC_ALL, "");
     
+    
+    int total_contagions_country;
+    
     /* Usado para testar se as 
      * váriaveis estão sendo 
      * recebidas corretamente */
-    
-    int count, i, j;
-    
     printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d);
-    for(count = 0; count < p; count++){
-        printf("%s", name_country[count]);
+    for(int count = 0; count < p; count++){
+        printf("%s\n", name_country[count]);
         //puts(name_country[count]);
     }
+    
     printf("\nOs contagios por cada país são:\n");
-    for(i = 0; i < p; i++){
-        for(j = 0; j < d; j++){
+    for(int i = 0; i < p; i++){
+        for(int j = 0; j < d; j++){
             printf("%d ", mat_contagions[i][j]);
         }
         printf("\n");
     }
-    /*    
-    printf("Numero total de congagios por pais\n");
-    for(count = 0; count < p; count++){
-        printf("%s: %d\n", name_country[count]);
-    }
     
+    printf("\nNumero total de congagios por pais\n");
+    for(int count = 0; count < p; count++){
+        total_contagions_country = total_contagios_pais(d, mat_contagions, count);
+        printf("%s: %d\n", name_country[count], total_contagions_country);
+    }
+    /*
+    for(int i = 0; i < p; i++){
+        printf("%s: %d\n", name_country[i], total_contagions_country);
+    }*/
+    
+/*    clear_buffer();
+    
+    total_contagions_country = total_contagios_pais(d, mat_contagions, p);
+    
+    printf("Numero total de congagios por pais\n");
+    for(int i = 0; i < p; i++){
+        for(int j = 0; j < d; j++){
+            printf("%s: %d\n", name_country[i], total_contagions_country);
+        }
+    }*/
+    /*
     printf("Dia com maior numero de contagios por pais\n");
     for(count = 0; count < d; count++){
         printf("%s: %d (%d)\n", name_country[count], ,);

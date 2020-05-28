@@ -34,9 +34,13 @@
  **********************************************************************************/
 
 #include <stdio.h>
-#include "clear_buffer.h"
+#include "../include/clear_buffer.h"
 
 void clear_buffer(void){    
     char c;
     while((c = getchar()) != '\n' && c != EOF);
+}
+
+void buffer_clean(void){
+    while(getchar() != '\n');
 }

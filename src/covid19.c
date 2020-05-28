@@ -32,22 +32,22 @@
  **********************************************************************************/
 
 #include <stdio.h>
-#include <string.h>
-#include <locale.h>
-#include <stdio_ext.h>
-#include "../include/clear_buffer.h"
-#include "../include/covid19.h"
+#include "../include/my_stdio.h"
 
 void 
 le_paises(int num_countrys, 
           char name_country[][TAM_MAX_NOME + 1]){
     setlocale(LC_ALL, "");
     
+    /* Lê os países digitados pelo usuário e salva em
+     * uma matriz de caracteres */
     for(int count = 0; count < num_countrys; count++){
-        fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
+        scanf(" %50[^\n]", name_country[count]);
+        //fgets(name_country[count], TAM_MAX_NOME + 1, stdin);
+        //gets(name_country);
     }
-        clear_buffer();
 }
+
 void 
 le_contagios(int num_countrys, 
              int num_days, 
@@ -58,28 +58,44 @@ le_contagios(int num_countrys,
         for(int j = 0; j < num_days; j++){
             scanf("%d", &mat_contagions[i][j]);
         }
-            clear_buffer();
     }
 }
-/*
+
 int 
 total_contagios_pais(int num_days, 
-                     int mat_total_contagions[][*], 
+                     int mat_total_contagions_pais[][num_days], 
                      int index_contagion){
-    setlocale(LC_ALL, "");
     
+    int total_contagions_coutry = 0; /* Variável que guarda o 
+                                      * total de contágios */
     
-    return;
+    /* Soma a quantidade de contagios digi-
+     * tada pelo usuário */
+    for(int i = 0; i <= index_contagion; i++){
+        total_contagions_coutry = 0;
+        for(int j = 0; j < num_days; j++){
+            total_contagions_coutry += mat_total_contagions_pais[i][j];
+        }
+    }
+    
+    return total_contagions_coutry; // Retorna o total de contagios
 }
 
+/*
 void 
 dia_maior_contagio_pais(int num_days,
-                        int mat_contagions[][*], 
-                        int index_contagion, 
-                        int *contagion_day, 
+                        int mat_contagions[][num_days],
+                        int index_contagion,
+                        int *contagion_day,
                         int *max_contagion_number){
-    setlocale(LC_ALL, "");
-    
+    //setlocale(LC_ALL, "");
+    for(int i = 0; i < index_contagion; i++){
+        for(int j = 0; j < num_days; j++){
+            if(){
+                
+            }
+        }
+    }
 }
 
 void 
@@ -88,7 +104,7 @@ dia_maior_contagio(int num_countrys,
                    int mat_contagions[num_countrys][num_days], 
                    int *contagion_day, 
                    int *max_contagion_number){
-    setlocale(LC_ALL, "");
+    //setlocale(LC_ALL, "");
     
 }
 

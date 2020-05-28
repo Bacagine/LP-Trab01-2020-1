@@ -55,4 +55,6 @@
  * passei a usa-lá em meus programas */
 void clear_buffer(void);
 
+void buffer_clean(void);
+
 #endif // _CLEAR_BUFFER_H
