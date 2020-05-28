@@ -31,71 +31,20 @@
  **********************************************************************************/
 
 #include <stdio.h>
-#include "../include/my_stdio.h"
+#include "../include/my_stdio.h" /* Biblioteca com as funções 
+                                  * de entrada e saida do 
+                                  * programa */
 
 int main(int argc, char **argv){    
-    if(argc == 1){ // Verifica se o usuário não digitou parametros
-        input();
-//         setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
-//         int p, d; // Quantidade de Países, Quantidade de Dias
-//         
-//         scanf("%d", &p); // Lê a quanditade de países
-//                 
-//        /* Caso o usuário digite um número menor ou
-//         * igual a zero é pedido para que digite outro
-//         * valor para p */
-//         while(p <= 0){
-//             system("clear");
-//             fprintf(stderr, "Erro! A quantidade de países deve ser maior 0\n");
-//             fprintf(stderr, "Por favor digite outro valor:\n");
-//             scanf("%d", &p);
-//         }
-//         /* Matriz de caracteres onde os nomes dos
-//         * países devem ser armazenados.*/
-//         char name_country[p][51];
-//         
-//         clear_buffer(); // Limpa o buffer do terminal
-//         
-//         le_paises(p, name_country);
-//         
-//         scanf("%d", &d);
-//         
-//         int mat_contagions[p][d];
-//         
-//         // Lê a quantidade de contagios para cada país
-//         le_contagios(p, d, mat_contagions);
-//         
-//         clear_buffer();
-//         
-//     //     for(int count = 0; count < p; count++){
-//     //         total_contagios_pais(d, mat_contagions, count);
-//     //     }
-//         int total_contagions_country;
-//         
-//         /* Usado para testar se as 
-//         * váriaveis estão sendo 
-//         * recebidas corretamente */
-//         printf("\nO valor de p é = %d\nE o valor de d é = %d\n", p, d);
-//         for(int count = 0; count < p; count++){
-//             printf("%s\n", name_country[count]);
-//             //puts(name_country[count]);
-//         }
-//         
-//         printf("\nOs contagios por cada país são:\n");
-//         for(int i = 0; i < p; i++){
-//             for(int j = 0; j < d; j++){
-//                 printf("%d ", mat_contagions[i][j]);
-//             }
-//             printf("\n");
-//         }
-//         
-//         printf("\nNumero total de congagios por pais\n");
-//         for(int count = 0; count < p; count++){
-//             total_contagions_country = total_contagios_pais(d, mat_contagions, count);
-//             printf("%s: %d\n", name_country[count], total_contagions_country);
-//         }
+    // Verifica se o usuário não digitou parametros
+    if(argc == 1){
+        input(); // Para entender essa função veja a biblioteca my_stdio.h
     }
-    else if(argc == 2){ // Verifica se o usuário digitou argumentos
+    // Verifica se o usuário digitou argumentos
+    else if(argc == 2){
+        /* O if entende 0 como falso; a função strcmp retorna 0 
+         * caso duas strings sejam iguais. Por isso colocamos a negação
+         * da função para que ela nos retornasse o valor 1 */
         if((!strcmp(argv[1], "-v")) || (!strcmp(argv[1], "--version"))){
             puts(VERSION); // Mostra a versão da aplicação e sai
         }
@@ -138,11 +87,14 @@ int main(int argc, char **argv){
             }*/
             else{
                 fprintf(stderr, "Erro ao abrir o arquivo tux.txt");
+                return 1;
             }
         }
     }
-    else if(argc > 2){ // Verifica se a função main recebe mais de 2 argumentos
+    // Verifica se a função main recebe mais de 2 argumentos
+    else if(argc > 2){
         fprintf(stderr, "Erro! Você digitou mais de um argumento!\n");
+        return 1;
     }
     return 0;
 }

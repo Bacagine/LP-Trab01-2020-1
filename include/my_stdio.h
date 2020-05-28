@@ -32,9 +32,15 @@
 #include "../include/covid19.h"       // Biblioteca criada pelo Profº Ciro
 #include "../include/clear_buffer.h" // Usado para limpar o buffer do terminal
 
+#ifdef __unix__
+    #define clear_screen() system("clear");
+#elif defined(_WIN32) || defined(WIN32) || defined(__MINGW32__) || defined(_MCS_VER)
+    #define clear_screen() system("cls");
+#endif
+
 #define TUX "../.tux.txt" // It is a Easter Egg (this is top secret =) )
 //#define TUX_LINUX "../share/covid19/tux.txt"
-#define VERSION "covid19 20.05.27 (amd64)" // Versão da aplicação
+#define VERSION "covid19 20.05.28 (amd64)" // Versão da aplicação
 #define HELP "Usage: covid19 [option]\n\
 \ncovid19 é uma aplicação que recebe e processa informações a respeito do número\n\
 de contagios por Covid-19 em um conjunto de países num determinado período de\n\
