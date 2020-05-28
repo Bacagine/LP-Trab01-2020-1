@@ -80,20 +80,20 @@ void output(int p,
         
     int total_contagions_country;
     int max_contagion_day_country;
-    int max_contagion_number;
+    int max_contagion_number_country;
     
     printf("\nNumero total de congagios por pais\n");
     for(int count = 0; count < p; count++){
         total_contagions_country = total_contagios_pais(d, mat_contagions, count);
         printf("%s: %d\n", name_country[count], total_contagions_country);
-    } // Até aqui tudo OK =)
+    }
     
     
     printf("\nDia com maior numero de contagios por pais\n");
     for(int count = 0; count < p; count++){
-        dia_maior_contagio_pais(d, mat_contagions, count, &max_contagion_day_country, &max_contagion_number);
-        printf("%s: %d (%d)\n", name_country[count], max_contagion_day_country, max_contagion_number);
-    }
+        dia_maior_contagio_pais(d, mat_contagions, count, &max_contagion_day_country, &max_contagion_number_country);
+        printf("%s: %d (%d)\n", name_country[count], max_contagion_day_country, max_contagion_number_country);
+    } // Até aqui tudo OK =)
     
     /*
     printf("\nDia com maior numero de contagios\n");

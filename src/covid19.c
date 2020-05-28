@@ -84,7 +84,7 @@ total_contagios_pais(int num_days,
     /* Retorna o total de 
      * contágios para cada país */
     return total_contagions_coutry;
-} // Até aqui tudo OK =)
+}
 
 void 
 dia_maior_contagio_pais(int num_days,
@@ -94,29 +94,31 @@ dia_maior_contagio_pais(int num_days,
                         int *max_contagion_number_country){
     // Verifica qual é o maior número    
     for(int i = 0; i <= index_contagion; i++){
+        *max_contagion_number_country = 0;
+        *max_contagion_number_country = 0;
         for(int j = 0; j < num_days; j++){
             if(i == 0 && j == 0){
                 *max_contagion_number_country = mat_contagions[0][0];
-                *max_contagion_day_country = mat_contagions[0][0];
+                *max_contagion_day_country = j + 1;
             }
             else if(mat_contagions[i][j] >= *max_contagion_number_country){
                 *max_contagion_number_country = mat_contagions[i][j];
-                *max_contagion_day_country = mat_contagions[i][j];
+                *max_contagion_day_country = j + 1;
             }
-            else if(mat_contagions[i][j] <= *max_contagion_number_country){
+            /*else if(mat_contagions[i][j] <= *max_contagion_number_country){
                 *max_contagion_number_country = mat_contagions[i][j];
                 *max_contagion_day_country = mat_contagions[i][j];
-            }
+            }*/
         }
     }
-}
+} // Até aqui tudo OK =)
 
 /*
 void 
 dia_maior_contagio(int num_countrys, 
                    int num_days, 
                    int mat_contagions[num_countrys][num_days], 
-                   int *contagion_day, 
+                   int *max_contagion_day, 
                    int *max_contagion_number){
     
     for(int i = 0; i < num_countrys; i++){
