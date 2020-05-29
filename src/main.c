@@ -34,8 +34,9 @@
 #include "../include/my_stdio.h" /* Biblioteca com as funções 
                                   * de entrada e saida do 
                                   * programa */
+#include "../include/developers.h"
 
-int main(int argc, char **argv){    
+int main(int argc, char **argv){
     // Verifica se o usuário não digitou parametros
     if(argc == 1){
         input(); // Para entender essa função veja a biblioteca my_stdio.h
@@ -52,6 +53,12 @@ int main(int argc, char **argv){
             puts(VERSION); // Mostra a versão da aplicação
             puts(HELP);   // Mostra a ajuda para o usuário e sai
         }
+        else if((!strcmp(argv[1], "-dev")) || (!strcmp(argv[1], "--developers"))){
+            developers();
+        }/*
+        else if((!strcmp(,)) || (!strcmp(,))){
+            
+        }*/
         else if(argc == 2 && !strcmp(argv[1], "--tux")){ // Easter Egg
             FILE *tux; // Declara um ponteiro do tipo FILE
             char c; // Caracteres
@@ -61,7 +68,7 @@ int main(int argc, char **argv){
                 }
                 fclose(tux); // Fecha o arquivo ../.tux.txt
             }
-            else if((tux = fopen(TUX, "r")) == NULL){
+            else{
                 printf(" ______________\n"
                        "/              \\\n"
                        "|              |\n"
@@ -78,17 +85,19 @@ int main(int argc, char **argv){
                        "     (|     | )\n"
                        "    /'\\_   _/`\\\n"
                        "    \\___)=(___/\n");
-            }
+            /*else if((tux = fopen(TUX, "r")) == NULL){
+            }*/
 /*            else if((tux = fopen(TUX_LINUX, "r")) == NULL){ 
                 while((c = fgetc(tux) != EOF)){
                     fputc(c, stdout);
                 }
                 fclose(tux);
             }*/
-            else{
+            }
+            /*else{
                 fprintf(stderr, "Erro ao abrir o arquivo tux.txt");
                 return 1;
-            }
+            }*/
         }
     }
     // Verifica se a função main recebe mais de 2 argumentos

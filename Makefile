@@ -17,7 +17,7 @@ BINDIR  = ./bin
 IMGDIR  = ./icons
 SRC     = $(wildcard $(SRCDIR)/*.c)
 INC     = -I $(INCDIR)
-OBJ     = $(addprefix $(OBJDIR)/,main.o covid19.o clear_buffer.o my_stdio.o)
+OBJ     = $(addprefix $(OBJDIR)/,main.o covid19.o clear_buffer.o my_stdio.o developers.o)
 BIN     = $(BINDIR)/$(TARGET)
 IMG     = $(IMGDIR)/$(TARGET).png
 RM      = rm -rf
@@ -26,7 +26,7 @@ MK      = mkdir -p
 LINK    = ln -s
 DESKTOP = desktop-file-install
 CC      = gcc
-#CFLAGS  = -W -Wall -lm -g
+CFLAGS  = -W -Wall -Werror -lm -g
 
 all: $(OBJDIR) $(BINDIR) $(BIN)
 
@@ -42,13 +42,15 @@ $(BINDIR):
 
 $(BIN): $(OBJ) # $@ = $(BIN) & $< = $(OBJ)
 	$(CC) -o $@ $(OBJ) $(CFLAGS)
-$(OBJDIR)/main.o: $(SRCDIR)/main.c $(INCDIR)/my_stdio.h
+$(OBJDIR)/main.o: $(SRCDIR)/main.c
 	$(CC) -c $< $(INC) -o $@ $(CFLAGS)
-$(OBJDIR)/covid19.o: $(SRCDIR)/covid19.c $(INCDIR)/my_stdio.h
+$(OBJDIR)/covid19.o: $(SRCDIR)/covid19.c #$(INCDIR)/my_stdio.h
 	$(CC) -c $< $(INC) -o $@ $(CFLAGS)
 $(OBJDIR)/clear_buffer.o: $(SRCDIR)/clear_buffer.c $(INCDIR)/clear_buffer.h
 	$(CC) -c $< $(INC) -o $@ $(CFLAGS)
 $(OBJDIR)/my_stdio.o: $(SRCDIR)/my_stdio.c $(INCDIR)/my_stdio.h
+	$(CC) -c $< $(INC) -o $@ $(CFLAGS)
+$(OBJDIR)/developers.o: $(SRCDIR)/developers.c $(INCDIR)/developers.h
 	$(CC) -c $< $(INC) -o $@ $(CFLAGS)
 
 # Executa a aplicação

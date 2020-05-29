@@ -20,27 +20,28 @@
  * Você deve ter recebido uma cópia da GNU General Public License juntamente
  * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>
  * 
- * Data da última modificação: 27/02/2020
+ * Data da última modificação: 28/02/2020
  */
 
 #ifndef _MY_STDIO_H
 #define _MY_STDIO_H
 
-#include <stdlib.h>                      // Biblioteca usada para ultilizar comandos do Sistema Operacional
 #include <locale.h>                     // Usado para acentuar as palavras
 #include <string.h>                    // Usado para a manipulação de strings
 #include "../include/covid19.h"       // Biblioteca criada pelo Profº Ciro
 #include "../include/clear_buffer.h" // Usado para limpar o buffer do terminal
 
 #ifdef __unix__
-    #define clear_screen() system("clear");
+    #include <stdlib.h> // Biblioteca usada para ultilizar comandos do Sistema Operacional
+    #define clear_terminal() system("clear");
 #elif defined(_WIN32) || defined(WIN32) || defined(__MINGW32__) || defined(_MCS_VER)
-    #define clear_screen() system("cls");
+    #include <stdlib.h>
+    #define clear_terminal() system("cls");
 #endif
 
 #define TUX "../.tux.txt" // It is a Easter Egg (this is top secret =) )
 //#define TUX_LINUX "../share/covid19/tux.txt"
-#define VERSION "covid19 20.05.28v2 (amd64)" // Versão da aplicação
+#define VERSION "covid19 20.05.29 (amd64)" // Versão da aplicação
 #define HELP "Usage: covid19 [option]\n\
 \ncovid19 é uma aplicação que recebe e processa informações a respeito do número\n\
 de contagios por Covid-19 em um conjunto de países num determinado período de\n\

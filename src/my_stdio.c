@@ -27,7 +27,7 @@
  * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>        *
  *                                                                                *
  * Data:                                                                          *
- * Data da última modificação: 27/05/2020                                         *
+ * Data da última modificação: 28/05/2020                                         *
  **********************************************************************************/
 
 #include <stdio.h>
@@ -37,13 +37,16 @@ void input(void){
     setlocale(LC_ALL, ""); // Permite o uso de caracteres especiais
     int p, d; // Quantidade de Países, Quantidade de Dias
     
+    // Limpa o terminal
+    //clear_terminal();
+    
     scanf("%d", &p); // Lê a quanditade de países
             
     /* Caso o usuário digite um número menor ou
      * igual a zero é pedido para que digite outro
      * valor para p */
     while(p <= 0){
-        clear_screen();
+        clear_terminal();
         fprintf(stderr, "Erro! A quantidade de países deve ser maior 0\n");
         fprintf(stderr, "Por favor digite outro valor:\n");
         scanf("%d", &p);
@@ -77,10 +80,25 @@ void output(int p,
             char name_country[][TAM_MAX_NOME + 1], 
             int mat_contagions[p][d]){
     setlocale(LC_ALL, "");
-        
+    
+    // Total de contagios por país
     int total_contagions_country;
+    
+    /* Dia com o maior número de contagios
+     * para cada país */
     int max_contagion_day_country;
+    
+    // Maior número de contagios por país 
     int max_contagion_number_country;
+    
+    // O dia com o maior número de contagios de todos os países
+    int max_contagion_day;
+    
+    // O maior número de contagios ao todo
+    int max_contagion_number;
+    
+    // Maior sequencia crescente
+    int maior_seq;
     
     printf("\nNumero total de congagios por pais\n");
     for(int count = 0; count < p; count++){
@@ -88,24 +106,43 @@ void output(int p,
         printf("%s: %d\n", name_country[count], total_contagions_country);
     }
     
-    
     printf("\nDia com maior numero de contagios por pais\n");
     for(int count = 0; count < p; count++){
         dia_maior_contagio_pais(d, mat_contagions, count, &max_contagion_day_country, &max_contagion_number_country);
         printf("%s: %d (%d)\n", name_country[count], max_contagion_day_country, max_contagion_number_country);
     } // Até aqui tudo OK =)
     
-    /*
+//    for(int count = 0; count < p; count++){
+        dia_maior_contagio(p, d, mat_contagions, &max_contagion_day, &max_contagion_number);
+//    }
     printf("\nDia com maior numero de contagios\n");
-    printf("%d: %d\n", );
+    printf("%d: %d\n", max_contagion_day, max_contagion_number);
+    
     
     printf("\nMaior sequencia crescente de contagios por pais\n");
-    for(count = 0; count < ; count++){
-        printf("%s: %d\n", );
+    for(int count = 0; count < p; count++){
+        maior_seq = maior_sequencia_crescente(d, mat_contagions, count);
+        printf("%s: %d\n", name_country[count], maior_seq);
     }
-    */
+    
+    /* Pausa a tela para o 
+     * usuário ver a saída
+     * do programa */
     getchar();
 }
+
+/* Essa é a entrada usada para testes
+
+3
+Brasil
+Estados Unidos
+Argentina
+10
+482 502 487 352 323 1138 1119 1074 1146 1222
+17050 19046 20093 19118 20463 25305 26756 28879 32525 33725
+87 101 55 75 146 88 79 132 88 98
+
+*/
 
 /* Usado para testar se as 
  * váriaveis estão sendo 

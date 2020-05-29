@@ -20,6 +20,7 @@
  * com este programa; caso contrário, veja <https://www.gnu,org/licenses/>
  * 
  * Data: 30/11/2019
+ * Data da última modificação: 28/05/2020
  */
 
 #ifndef _CLEAR_BUFFER_H
@@ -55,6 +56,10 @@
  * passei a usa-lá em meus programas */
 void clear_buffer(void);
 
+/* Função cirada pelo professor Ciro Crine Trindade
+ * 
+ * Outra maneira de limpar o buffer
+ * do terminal. */
 void buffer_clean(void);
 
 #endif // _CLEAR_BUFFER_H
